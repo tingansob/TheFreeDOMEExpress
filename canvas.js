@@ -1,6 +1,6 @@
 var canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth;
-canvas.height= window.innerHeight;
+canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
 /*
@@ -30,16 +30,16 @@ for (var i = 0; i < 150; i++ ) {
 */
 var x = Math.random() * innerWidth;
 var y = Math.random() * innerHeight;
-var dx = (Math.random() - 0.5) * 8;
-var dy = (Math.random() - 0.5) * 8;
-var radius = 30;
+var dx = (Math.random() - 0.5) * 20;
+var dy = (Math.random() - 0.5) * 20;
+var radius = 60;
 function animate() {
     requestAnimationFrame(animate);
     c.clearRect(0, 0, innerWidth, innerHeight);
 
     c.beginPath();
     c.arc(x, y, radius, 0, Math.PI * 2, false);
-    c.strokeStyle = "rgb(44,46,191)";
+    c.strokeStyle = "#FFF";
     c.stroke();
     if (x + radius > innerWidth || x - radius < 0) {
         dx = -dx;
@@ -50,5 +50,5 @@ function animate() {
     x += dx;
     y += dy;
 }
-animate()
+animate();
 console.log(canvas);
